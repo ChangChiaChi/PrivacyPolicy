@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy and data-handling information for Markdown Viewer Pro.">
+  <title>Markdown Viewer Pro Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.8; color: #243047; background: #f7f8fc; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(100% - 2rem, 52rem); margin: 2rem auto; padding: clamp(1.2rem, 4vw, 3rem); background: #fff; border: 1px solid #dce1eb; border-radius: .75rem; }
+    h1 { margin: 0 0 1.2rem; font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.35; overflow-wrap: anywhere; }
+    h2 { margin: 3rem 0 1rem; padding-top: 2rem; border-top: 1px solid #dce1eb; }
+    p { margin: 1rem 0; overflow-wrap: anywhere; }
+    a { color: #184cb9; text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+    code { font-family: ui-monospace, monospace; font-size: .92em; background: #eef1f7; padding: .12em .3em; border-radius: .2em; overflow-wrap: anywhere; }
+    @media (prefers-color-scheme: dark) { :root { color: #e2e8f0; background: #101621; } main { background: #182131; border-color: #344155; } h2 { border-color: #344155; } a { color: #a9c7ff; } code { background: #25334a; } }
+    @media print { :root, main { color: #000; background: #fff; } main { width: 100%; margin: 0; padding: 0; border: 0; } a { color: #000; } }
+  </style>
+</head>
+<body>
+<main>
+<section lang="zh-Hant">
+<h1>Markdown Viewer Pro 隱私權政策</h1>
+<p><strong>最後更新：2026 年 10 月 14 日</strong></p>
+<p>Markdown Viewer Pro 由 Thunder Studio 提供，只處理使用者選擇預覽的本機或網頁 Markdown／文字內容與來源網址，以及主題、字體大小與目錄側邊欄狀態。</p>
+<p>解析、DOMPurify 清理、KaTeX 與 Mermaid 都在瀏覽器本機執行。使用者按下「預覽目前分頁」後，網頁 Markdown 的單次交接資料會以 request ID 暫存在 <code>chrome.storage.session</code>，Viewer 讀取後立即刪除該交接資料；未完成的交接資料最遲在瀏覽器工作階段結束時清除。</p>
+<p>為支援重新整理，Viewer 另將目前預覽文件與來源網址保留在擴充功能來源、每分頁獨立的 <code>sessionStorage</code>，與來源網站隔離。每個分頁只保留目前預覽，新預覽會取代舊暫存。重整暫存依瀏覽器分頁工作階段保留，可能隨瀏覽器工作階段復原而恢復；清除 Extension 網站資料可移除。前述立即刪除僅指單次交接資料。重整暫存不會寫入 <code>localStorage</code> 或傳送至伺服器。</p>
+<p>主題、字體大小與目錄側邊欄偏好設定保留在 Extension <code>localStorage</code>，直到使用者清除 Extension 網站資料或解除安裝。</p>
+<p>擴充功能不會把文件文字、網址或偏好設定傳送給 Thunder Studio，不含分析、廣告或遙測。若文件引用遠端圖片，Chrome 可能直接向該圖片來源發出請求以顯示資源，但不會把文件文字附加到請求中。</p>
+<p>我們不會出售、分享或移轉使用者資料，不會將資料用於廣告、信用評估或與 Markdown 預覽無關的用途，也不允許人員閱讀文件內容。</p>
+<p>Markdown Viewer Pro 對 Chrome API 資訊的使用遵守 Chrome Web Store User Data Policy，包括 Limited Use 要求。資料只用於提供或改善已揭露的 Markdown 預覽功能。</p>
+<p>資料刪除方式：單次交接資料在 Viewer 讀取後刪除，最遲在瀏覽器工作階段結束時清除。每分頁重整暫存會由新預覽取代，並可透過清除 Extension 網站資料移除；瀏覽器工作階段復原可能恢復該暫存。偏好設定可透過清除 Extension 網站資料或解除安裝刪除。</p>
+<p>問題或刪除請求請使用 <a href="https://github.com/ChangChiaChi/ChromeExtension-Legal/issues">Markdown Viewer Pro Support</a>。</p>
+</section>
+<section lang="en">
+<h2>English</h2>
+<p><strong>Last updated: October 14, 2026</strong></p>
+<p>Markdown Viewer Pro is provided by Thunder Studio. It handles only the local or web Markdown/text content and source URLs that a user chooses to preview, plus local theme, font-size, and sidebar preferences.</p>
+<p>Parsing, DOMPurify sanitization, KaTeX, and Mermaid rendering run locally in the browser. Web Markdown selected through <strong>Preview current tab</strong> is handed off under a one-time request ID in <code>chrome.storage.session</code>. That handoff entry is removed immediately after the Viewer consumes it, and otherwise cleared when the browser session ends.</p>
+<p>To support reload, the Viewer separately retains the current preview document and source URL in extension-origin, per-tab <code>sessionStorage</code>, isolated from the source website. Only the current preview is retained per tab; a new preview replaces the previous cache. The reload cache follows the browser tab-session lifetime and may be restored by browser session recovery. Clearing Extension site data removes it. Immediate deletion above refers only to the one-time handoff. The reload cache is not written to <code>localStorage</code> or sent to a server.</p>
+<p>Theme, font-size, and sidebar preferences remain in Extension <code>localStorage</code> until the user clears Extension site data or uninstalls the Extension.</p>
+<p>The Extension does not transmit document text, URLs, or preferences to Thunder Studio and includes no analytics, advertising, or telemetry. Chrome may fetch remote images referenced by a document directly from their source so they can be displayed; document text is not appended to those requests.</p>
+<p>We do not sell, share, or transfer user data, use it for advertising, credit decisions, or unrelated purposes, or permit humans to read document content.</p>
+<p>Markdown Viewer Pro's use of information received from Chrome APIs complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. Data is used only to provide or improve the disclosed Markdown preview feature.</p>
+<p>The one-time handoff entry is deleted after the Viewer consumes it and otherwise at the end of the browser session. The per-tab reload cache is replaced by a new preview and can be removed by clearing Extension site data; browser session recovery may restore the cache. Preferences can be deleted by clearing Extension site data or uninstalling Markdown Viewer Pro.</p>
+<p>For questions or deletion requests, use <a href="https://github.com/ChangChiaChi/ChromeExtension-Legal/issues">Markdown Viewer Pro Support</a>.</p>
+</section>
+</main>
+</body>
+</html>
