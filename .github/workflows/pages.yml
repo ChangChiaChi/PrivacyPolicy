@@ -1,0 +1,50 @@
+name: Check policies and deploy published releases
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the exact commit or release tag
+        uses: actions/checkout@v6
+      - name: Prepare public policy files
+        shell: bash
+        run: |
+          test -s index.html
+          test -s ChromeExtension-Legal/index.html
+          test -f .nojekyll
+          mkdir _site
+          cp index.html .nojekyll _site/
+          cp -R ChromeExtension-Legal _site/
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name == 'release' && github.event.action == 'published' && !github.event.release.draft && !github.event.release.prerelease && startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    concurrency:
+      group: privacy-policy-production
+      cancel-in-progress: false
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the published release
+        id: deployment
+        uses: actions/deploy-pages@v4
