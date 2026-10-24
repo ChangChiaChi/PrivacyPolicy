@@ -1,6 +1,6 @@
 # PrivacyPolicy
 
-Public privacy policies for Thunder Studio products. Only public policy content belongs in this repository.
+Public privacy policies for nedfel products. Only public policy content belongs in this repository.
 
 - Policy index: https://changchiachi.github.io/PrivacyPolicy/
 - Markdown Viewer Pro: https://changchiachi.github.io/PrivacyPolicy/ChromeExtension-Legal/
