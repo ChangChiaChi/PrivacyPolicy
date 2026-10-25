@@ -21,11 +21,12 @@ jobs:
         shell: bash
         run: |
           test -s index.html
+          test -s ChromeExtension/markdown-viewer-pro/index.html
           test -s ChromeExtension-Legal/index.html
           test -f .nojekyll
           mkdir _site
           cp index.html .nojekyll _site/
-          cp -R ChromeExtension-Legal _site/
+          cp -R ChromeExtension ChromeExtension-Legal _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
